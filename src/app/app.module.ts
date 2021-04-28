@@ -5,12 +5,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BaseModule } from './core/base-module';
-import { FormPet1Component } from './form-register/form-pet1/form-pet1.component';
+import { FormPetComponent } from './components/form-pet/form-pet.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormPet1Component
+    FormPetComponent
   ],
   imports: [
     BrowserModule,

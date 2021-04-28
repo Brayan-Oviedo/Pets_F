@@ -1,15 +1,16 @@
 export class Pet {
 
-    chip: string = '';
+    id: string = '';
     name: string = '';
     kind: string = 'Can';
     weight: number = -1;
-    raza: string = '';
+    race: string = '';
     colour: string = '';
     sex = 'Macho';
     age: number = -1;
     particularSigns: string = '';
     size = 'Elija';
-    personalidad: string = '';
-    estado = 'En albergue';
+    personality: string = '';
+    condition = 'En albergue';
+    admissionDate: Date = new Date();
 }
