@@ -1,0 +1,39 @@
+<h5 class="card-header" style="text-align: center"> Macostas </h5>
+<form style="padding-top: 2rem;">
+
+    <div class="container-lg">
+
+        <div class="form-group row">
+            <div class="col-sm">
+                <input type="text" id="chip" class="form-control" [(ngModel)]="pet.chip" [ngModelOptions]="{standalone: true}" placeholder="Chip">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm">
+                <input type="text" id="name" class="form-control" [(ngModel)]="pet.name" [ngModelOptions]="{standalone: true}" placeholder="Nombre">
+            </div>
+        
+        </div>
+
+        <div class="form-group row">
+            <div class="row col-sm-2">
+                <input class="col-sm" type="checkbox" id="can" value="option1">
+                <label class="" for="can">Can</label>
+            </div>
+
+            <div class="form-group col-sm-2">
+                <input class="mx-2" type="checkbox" id="feline" value="option2">
+                <label class="mx-1" for="feline">Felino</label>
+            </div>      
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm">
+                <input type="text" class="form-control" [(ngModel)]="pet.weight" [ngModelOptions]="{standalone: true}" placeholder="Peso">
+            </div>
+        </div>
+
+        <button type="button" (click)="savePet()">Guardar</button>
+    </div>
+</form>
