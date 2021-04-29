@@ -1,6 +1,6 @@
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { HttpErrorInterceptor } from '../core/exceptions/http-error-interceptor'
+import { HttpErrorInterceptor } from '../exceptions/http-error-interceptor'
 
 @NgModule({
   imports: [

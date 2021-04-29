@@ -1,113 +1,138 @@
 <body>
 
-    <h1 class="card-header font-weight-bold" style="text-align: center;">Mascota</h1>
-      
     <section>
       
       <div class="row g-0">
         
-        <div class="col-lg-7">
-          
-          <form>
+        <div class="col-lg-5">
+          <div class="col-12 px-0 pb-sm-2 pb-lg-4">
+            <h1 class="card-header font-weight-bold" style="text-align: center;">Mascota</h1>
+          </div>
+        
+          <form class="px-sm-3 px-lg-4">
             
               <div class="row g-0">
+
+                <div class="form-group col-6">
+                  <label for="chip">Chip</label>
+                  <input type="text" class="form-control" id="id" [(ngModel)]="pet.id" [ngModelOptions]="{standalone: true}" aria-describedby="chipMessage" placeholder="Ingrese el chip.">
+                  <small class="font-italic text-danger hide" id="id-alert">
+                    Chip no valido.
+                  </small>
+                </div>
+
+                <div class="form-group col-6">
+                  <label for="name">Nombre</label>
+                  <input type="text" class="form-control" id="name" [(ngModel)]="pet.name" [ngModelOptions]="{standalone: true}" placeholder="Ingrese el nombre.">
+                  <small class="font-italic text-danger hide" id="name-alert">
+                    Nombre no valido.
+                  </small>
+                </div>
+
+                
+
+              </div>
+
+              <div class="row g-0">
+
+                <div class="form-group col-4">
+                  <label for="sex">Sexo</label>
+                  <select class="form-control" id="sex" [(ngModel)]="pet.sex" [ngModelOptions]="{standalone: true}">
+                      <option>Macho</option>
+                      <option>Hembra</option>
+                  </select>
+                </div>
+
+                <div class="form-group col-4">
+                  <label for="colour">Color</label>
+                  <input type="text" class="form-control" id="colour" [(ngModel)]="pet.colour" [ngModelOptions]="{standalone: true}" placeholder="Ingrese el color.">
+                  <small class="font-italic text-danger hide" id="colour-alert">
+                    Color no valido.
+                  </small>
+                </div>
+
+                
+                <div class="form-group col-4">
+                  <label for="kind">Especie</label>
+                  <select class="form-control" id="kind" [(ngModel)]="pet.kind" [ngModelOptions]="{standalone: true}">
+                      <option>Can</option>
+                      <option>Felino</option>
+                  </select>
+                </div>
+
+              </div>
+
+              <div class="row">
+
+                <div class="form-group col-4">
+                  <label for="size">Tamaño</label>
+                  <select class="form-control" id="size" [(ngModel)]="pet.size" [ngModelOptions]="{standalone: true}">
+                      <option selected>Pequeño</option>
+                      <option>Mediano</option>
+                      <option>Grande</option>
+                  </select>
+                </div>
+
+                
+                <div class="form-group col-5">
+                  <label for="codition">Estado</label>
+                  <select class="form-control" id="condition" [(ngModel)]="pet.condition" [ngModelOptions]="{standalone: true}">
+                      <option>En albergue</option>
+                      <option>Eutanasiado</option>
+                  </select>
+                </div>
+
+                <div class="form-group col-3">
+                  <label for="weight">Peso(Kg)</label>
+                  <input type="number" class="form-control" id="weight" [(ngModel)]="pet.weight" [ngModelOptions]="{standalone: true}" placeholder="Ingrese el peso (Kg).">
+                </div>
+
+              </div>
+
+              <div class="row">
+
+                <div class="form-group col-lg-3 col-sm-4">
+                  <label for="age">Edad(meses)</label>
+                  <input type="number" class="form-control" id="age" [(ngModel)]="pet.age" [ngModelOptions]="{standalone: true}" placeholder="Ingrese la edad (meses).">
+                  <small class="font-italic text-danger hide" id="age-alert">
+                    Edad no valida.
+                  </small>
+                </div>
+                
+              <div class="form-group col-lg-5 col-sm-4">
+                <label for="race">Raza</label>
+                <input type="text" class="form-control" id="race" [(ngModel)]="pet.race" [ngModelOptions]="{standalone: true}" placeholder="Ingrese la raza.">
+              </div>
+
+                <div class="form-group col-4">
+                  <label for="personality">Personalidad</label>
+                  <select class="form-control" id="personality" [(ngModel)]="pet.personality" [ngModelOptions]="{standalone: true}">
+                      <option>Amigable</option>
+                      <option>Agresivo</option>
+                  </select>
+              </div>
+
               
-                <div class="col-6 pl-sm-3 pl-lg-4">
-                    
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Chip</label>
-                        <input type="text" class="form-control" id="chip" [(ngModel)]="pet.id" [ngModelOptions]="{standalone: true}" aria-describedby="chipMessage" placeholder="Ingrese el chip.">
-                      </div>
-                    
-                    <div class="form-group">
-                      <label for="name">Nombre</label>
-                      <input type="text" class="form-control" id="name" [(ngModel)]="pet.name" [ngModelOptions]="{standalone: true}" placeholder="Ingrese el nombre.">
-                    </div>
-                    
-                    <div class="form-group">
-                      <label for="race">Raza</label>
-                      <input type="text" class="form-control" id="race" [(ngModel)]="pet.race" [ngModelOptions]="{standalone: true}" placeholder="Ingrese la raza.">
-                    </div>
-                    
-                    <div class="form-group">
-                      <label for="colour">Color</label>
-                      <input type="text" class="form-control" id="colour" [(ngModel)]="pet.colour" [ngModelOptions]="{standalone: true}" placeholder="Ingrese el color.">
-                    </div>
-                    
-                    <div class="form-group">
-                      <label for="age">Edad</label>
-                      <input type="number" class="form-control" id="age" [(ngModel)]="pet.age" [ngModelOptions]="{standalone: true}" placeholder="Ingrese la edad (meses).">
-                    </div>
-                    
-                    <div class="form-group">
-                      <label for="weight">Peso</label>
-                      <input type="number" class="form-control" id="weight" [(ngModel)]="pet.weight" [ngModelOptions]="{standalone: true}" placeholder="Ingrese el peso (Kg).">
-                    </div>
-                    
-                  </div>
-                  
-                <div class="col-6 pr-sm-3 pr-lg-4">
-                  
-                  <div class="form-group">
-                      <label for="kind">Especie</label>
-                      <select class="form-control" id="kind" [(ngModel)]="pet.kind" [ngModelOptions]="{standalone: true}">
-                          <option>Can</option>
-                          <option>Felino</option>
-                      </select>
-                  </div>
-                    
-                    <div class="form-group">
-                      <label for="size">Tamaño</label>
-                      <select class="form-control" id="size" [(ngModel)]="pet.size" [ngModelOptions]="{standalone: true}">
-                          <option>Pequeño</option>
-                          <option>Mediano</option>
-                          <option>Grande</option>
-                      </select>
-                  </div>
-                    
-                    <div class="form-group">
-                      <label for="codition">Estado</label>
-                      <select class="form-control" id="condition" [(ngModel)]="pet.condition" [ngModelOptions]="{standalone: true}">
-                          <option>En albergue</option>
-                          <option>Eutanasiado</option>
-                      </select>
-                        
-                    </div>
-                    
-                    <div class="form-group">
-                      <label for="sex">Sexo</label>
-                      <select class="form-control" id="sex" [(ngModel)]="pet.sex" [ngModelOptions]="{standalone: true}">
-                          <option>Macho</option>
-                          <option>Hembra</option>
-                      </select>
-                    </div>
-                    
-                    <div class="form-group">
-                      <label for="personality">Personalidad</label>
-                      <select class="form-control" id="personality" [(ngModel)]="pet.personality" [ngModelOptions]="{standalone: true}">
-                          <option>Amigable</option>
-                          <option>Agresivo</option>
-                      </select>
-                  </div>
-                    
-                    <div class="form-group">
-                        <label for="particularSigns">Señas Particulares</label>
-                        <textarea class="form-control" id="paticularSigns" [(ngModel)]="pet.particularSigns" [ngModelOptions]="{standalone: true}" rows="2"></textarea>
-                    </div>
-                    
-                  </div>
+            </div>
+                
+              <div class="form-group">
+
+               <div class="form-group">
+                  <label for="particularSigns">Señas Particulares</label>
+                  <textarea class="form-control" id="paticularSigns" [(ngModel)]="pet.particularSigns" [ngModelOptions]="{standalone: true}" rows="4"></textarea>
+               </div>
               </div>
             </form>
             
 
-            <div class="col-12">
+            <div class="col-12 my-4">
               <button type="button" class="btn btn-light w-100" (click)="savePet()">Guardar</button>
             </div>
           </div>
 
           
           
-        <div class="col-lg-5"></div>
+          <div class="col-lg-5"></div>
         
         </div>
       

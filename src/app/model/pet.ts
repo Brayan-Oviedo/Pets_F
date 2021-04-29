@@ -9,7 +9,7 @@ export class Pet {
     sex = 'Macho';
     age: number = -1;
     particularSigns: string = '';
-    size = 'Elija';
+    size: string = '';
     personality: string = '';
     condition = 'En albergue';
     admissionDate: Date = new Date();
