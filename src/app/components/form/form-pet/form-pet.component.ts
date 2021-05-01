@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Pet } from 'src/app/model/pet';
 import { PetService } from './service/pet.service';
-import { RegularExpressions } from '../../core/validation/RegularExpressions';
+import { RegularExpressions } from '../../../core/validation/RegularExpressions';
 
 @Component({
   selector: 'app-form-pet',
