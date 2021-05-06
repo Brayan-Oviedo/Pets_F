@@ -5,12 +5,13 @@
       <div class="row g-0">
         
         <div class="col-lg-5 card card-body min-vh-100 justify-content-center">
-         
+        
+
           <div class="col-12 px-0 pb-sm-2 pb-lg-4">
             <h1 class="card-header font-weight-bold text-light bg-dark-x" style="text-align: center;">Mascota</h1>
           </div>
         
-          <form>
+          <form id="form">
             
               <div class="row">
 
@@ -100,10 +101,10 @@
                   </small>
                 </div>
                 
-              <div class="form-group col-sm-5">
-                <label for="race" class="text-light">Raza</label>
-                <input type="text" class="form-control" id="race" [(ngModel)]="pet.race" [ngModelOptions]="{standalone: true}" placeholder="Ingrese la raza.">
-              </div>
+                <div class="form-group col-sm-5">
+                  <label for="race" class="text-light">Raza</label>
+                  <input type="text" class="form-control" id="race" [(ngModel)]="pet.race" [ngModelOptions]="{standalone: true}" placeholder="Ingrese la raza.">
+                </div>
 
                 <div class="form-group col-sm-4">
                   <label for="personality" class="text-light">Personalidad</label>
@@ -111,10 +112,10 @@
                       <option>Amigable</option>
                       <option>Agresivo</option>
                   </select>
-              </div>
+                </div>
 
               
-            </div>
+              </div>
                 
               <div class="form-group">
 
@@ -129,19 +130,22 @@
                 <button type="button" class="btn btn-outline-light flex-grow-1 mr-2" (click)="savePet()">Guardar y continuar</button>
                 <button type="button" class="btn btn-outline-light flex-grow-1 ml-2">Cancelar</button>
               </div>
-            </form>
           
-          </div>
+          </form>
 
-          
-          
+          <lottie-player id="progress-bar" class="progress-bar hide" src="https://assets5.lottiefiles.com/packages/lf20_zwNx9A.json" speed="1" loop autoplay></lottie-player>
+
+        </div>
+              
+
+                  
           <div class="col-lg-7 d-md-block m-auto">
 
             <app-carousel></app-carousel> 
            
           </div>
         
-        </div>
+        </div>       
       
       </section>
 </body>
