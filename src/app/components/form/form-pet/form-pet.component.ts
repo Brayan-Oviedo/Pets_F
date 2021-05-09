@@ -3,14 +3,14 @@ import { Pet } from 'src/app/model/pet';
 import { PetService } from './service/pet.service';
 import { RegularExpressions } from '../../../core/validation/RegularExpressions';
 import { Messages } from '../../../core/messages/Messages'
-import { ProgressBar } from 'src/app/core/contracts/ProgressBar';
+import { ProgressBarI } from 'src/app/core/contracts/ProgressBarI';
 
 @Component({
   selector: 'app-form-pet',
   templateUrl: './form-pet.component.html',
   styleUrls: ['./form-pet.component.css']
 })
-export class FormPetComponent implements OnInit, ProgressBar {
+export class FormPetComponent implements OnInit, ProgressBarI {
 
   pet = new Pet();
 
@@ -30,7 +30,8 @@ export class FormPetComponent implements OnInit, ProgressBar {
         Messages.throwMessageSuccess('', 'Mascota agregada.');
         
       },error =>  { 
-        console.log('No se logro agregar.')
+        let mssg = error.message;
+        console.log('No se logro agregar.' + mssg)
         this.hideProgressBar();
         Messages.throwMessageError('', 'No se logro agregar la mascota.')
       });

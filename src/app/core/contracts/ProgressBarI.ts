@@ -1,6 +1,6 @@
 import { ViewportScroller } from "@angular/common";
 
-export interface ProgressBar {
+export interface ProgressBarI {
 
     showProgressBar(): void
     hideProgressBar(): void
