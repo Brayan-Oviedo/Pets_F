@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Pet } from 'src/app/model/pet';
-import { PetService } from './service/pet.service';
-import { RegularExpressions } from '../../../core/validation/RegularExpressions';
+import { PetService } from '../../../service/pet/pet.service';
+import { RegularExpressions } from '../../../core/validation/regular-expressions';
 import { Messages } from '../../../core/messages/Messages'
-import { ProgressBarI } from 'src/app/core/contracts/ProgressBarI';
+import { ProgressBarI } from 'src/app/core/contracts/progress-bar';
 
 @Component({
   selector: 'app-form-pet',
