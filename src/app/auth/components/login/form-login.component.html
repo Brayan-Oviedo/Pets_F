@@ -1,72 +1,72 @@
-<body class="bg-dark g-0">
-        
-    <section class="g-0">
-        
-        <div class="row">
-        
-            <div class="col-lg-7">
-            
-                
-            </div>
-            
-            <div class="col-lg-5 p-lg-4 p-sm-3 card vh-100
-                         ">
-                
-                <div class="px-0 mb-auto">
-                    <h1 class="card-header font-weight-bold text-light text-align-center" style="text-align: center;">Login</h1>
+<body>
+
+    <img class="img-fluid vh-100 vw-100" src="https://image.freepik.com/foto-gratis/muro-hormigon-gris-claro_53876-89532.jpg">
+
+    <div class="d-flex justify-content-center align-items-center vh-100">
+
+        <div class="card col-10 col-sm-7 col-md-5 col-lg-4 px-0 ">
+
+            <div class="card-header">
+
+                <div class="nav">
+                    <div class="nav-item m-auto font-weight-bolder">Iniciar sesión</div>
                 </div>
-                
-                
-                <form class="">
-                    
-                    <div class="form-group mb-3">
-                        <label for="userName" class="text-light">Nombre de Usuario</label>
-                        <input type="text" class="form-control" id="userName" [(ngModel)]="loginUser.userName" [ngModelOptions]="{standalone: true}" aria-describedby="userNameMessage" placeholder="Ingrese el nombre de ususario.">
-                        <small class="font-italic text-danger hide" id="id-alert">
-                            Username no valido.
-                        </small>
+            </div>
+
+
+            <div class="card-body">
+
+                <div class="form-group">
+                    <label for="userName">Nombre de Usuario</label>
+                    <input type="text" name="userName" id="userName" class="form-control bg-light"
+                        [(ngModel)]="loginUser.userName" [ngModelOptions]="{standalone: true}" required>
+
+                    <small class="font-italic text-danger hide" id="userName-alert">
+                        Nombre se usuario no valid.
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" name="password" id="password" class="form-control bg-light"
+                        [(ngModel)]="loginUser.password" [ngModelOptions]="{standalone: true}" required>
+
+                    <small class="font-italic text-danger hide" id="password-alert">
+                        Contraseña no valida.
+                    </small>
+                </div>
+
+                <div class="form-group mt-5">
+                    <button class="btn btn-lg btn-outline-dark font-weight-bold btn-block" type="submit">
+                        <i class="fas fa-sign-in-alt" (click)="login()"></i> Iniciar</button>
+                </div>
+
+
+                <div class="form-group">
+
+                    <small class="form-text text-center text-muted font-italic">O inicia con</small>
+                </div>
+
+
+                <div class="form-group d-flex justify-content-between flex-col mb-0">
+
+                    <div class="form-group flex-grow-1 pr-2">
+                        <button class="btn btn-light text-secondary font-italic btn-block" type="submit">
+                            Facebook <i class="fab fa-facebook"></i>
+
+                        </button>
                     </div>
 
-                    <div class="form-group mb-3">
-                        <label for="password" class="text-light">Contraseña</label>
-                        <input type="password" class="form-control" id="password" [(ngModel)]="loginUser.password" [ngModelOptions]="{standalone: true}" placeholder="Ingrese la contraseña.">
-                        <a href="" id="forgetPassword" class="form-text text-muted text-decoration-none mt-2">¿Has olvidado tu contraseña?</a>
-                        <small class="font-italic text-danger hide" id="name-alert">
-                            Contraseña no valida.
-                        </small>
+
+                    <div class="form-group flex-grow-1 pl-2">
+                        <button class="btn btn-light text-secondary font-italic btn-block" type="submit">
+                            Google <i class="fab fa-google-plus"></i></button>
                     </div>
-                    
-                    
-                    <div class="pt-2 mt-4">
-                        
-                        <button type="button" class="btn btn-outline-light w-100" (click)="login()">Iniciar</button>
-                    </div>
-                    
-                    
-                    <div class="pt-4 text-secondary">
-                        
-                       <p class="font-weight-bold text-center">O iniciar con</p>
-                    </div>
-                    
-                    <div class="d-flex justify-content-around pt-2">
-                        <button type="button" class="btn btn-light flex-grow-1 mr-2">Google</button>
-                        <button type="button" class="btn btn-light flex-grow-1 ml-2">Facebook</button>
-                    </div>
-                    
-      
-                </form>
-                
-                
-                
-                <div class="text-center text-secondary mt-auto">
-                    <p class="d-inline-block mb-0">¿Aun no tienes una cuenta?</p>
-                    <a href="" class="text-light font-weight-bolg text-decoration-none">Registrate</a>
                 </div>
+
             </div>
-            
         </div>
-    
-    </section>
-    
-    
+
+    </div>
+
 </body>

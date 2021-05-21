@@ -2,26 +2,12 @@ body {
     overflow: hidden;
 }
 
-.bg-dark {
-    background-color: #16191c;
+img {
+    position: absolute;
 }
 
-.bg-dark-x {
-    background-color: #000;
-}
-
-.form-control {
-    background-color: #1e2126;
-    border: 0;
-}
-
-.card {
-    background-color: #16191c;
-    max-height: 100%;
-}
-
-.opacity {
-    opacity: 0.5;
+.fan {
+    overflow: hidden;
 }
 
 .hide {

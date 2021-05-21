@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Role } from '../constants/role';
 
 const TOKEN_KEY = "AuthToken";
 
@@ -8,7 +9,7 @@ const TOKEN_KEY = "AuthToken";
 })
 export class TokenService {
 
-  private rols: Array<string> = [];
+  private rols: Array<Role> = [];
 
   constructor() { }
 
@@ -17,8 +18,8 @@ export class TokenService {
     window.sessionStorage.setItem(TOKEN_KEY, token);
   }
 
-  getToken(): string {
-    return String(sessionStorage.getItem(TOKEN_KEY));
+  getToken(): any {
+    return sessionStorage.getItem(TOKEN_KEY);
   }
 
   getUserName() {
@@ -34,9 +35,11 @@ export class TokenService {
 
     const values = this.getValuesPayloadFromToken();
     const rols = values.rols;
-    if(rols.indexOf("ADMIN") < 0) return "CUSTOMER";
+    if(rols.includes(Role.ADMIN)) return Role.ADMIN;
+    if(rols.includes(Role.MANAGER)) return Role.MANAGER;
+    if(rols.includes(Role.OPERATOR)) return Role.OPERATOR;
 
-    return "ADMIN";
+    return Role.CUSTOMER;
   }
 
   private getValuesPayloadFromToken(): any{

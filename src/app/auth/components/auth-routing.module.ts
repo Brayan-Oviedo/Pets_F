@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginGuard } from 'src/app/service/auth/login.guard';
+import { LoginGuard } from 'src/app/auth/guard/login.guard';
 import { AuthComponent } from './auth.component';
 import { FormLoginComponent } from './login/form-login.component';
 
@@ -9,7 +9,7 @@ const routes: Routes = [{
   component: AuthComponent,
   children: [
     {path: '', component: AuthComponent },
-    {path: 'form-login', component: FormLoginComponent, canActivate: [LoginGuard] }
+    {path: 'form-login', component: FormLoginComponent , canActivate: [LoginGuard]}
   ]
 }];
 

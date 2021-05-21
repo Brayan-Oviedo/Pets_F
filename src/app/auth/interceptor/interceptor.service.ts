@@ -27,6 +27,7 @@ export class InterceptorService implements HttpInterceptor {
 
     return next.handle(intReq).pipe(catchError((err: HttpErrorResponse) =>{
       if(err.status === 401) {
+        console.log('Expired...');
         const jwtDto = new JwtDto(this.tokenService.getToken());
         return this.authService.refrestToken(jwtDto).pipe(concatMap((data: any) => {
           this.tokenService.setToken(data.token);
