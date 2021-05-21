@@ -18,7 +18,7 @@ export class GuardService implements CanActivate{
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     const expectedRol = route.data.expectedRol;
     this.realRol = this.tokenService.getRol();
-    if(!this.tokenService.getToken() || expectedRol.indexOf(this.realRol) < 0) {
+    if(!this.tokenService.getToken() || !expectedRol.includes(this.realRol)) {
       this.router.navigate(['/']);
       return false;
     }

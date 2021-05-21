@@ -4,6 +4,7 @@ import { PetService } from '../../../service/pet/pet.service';
 import { RegularExpressions } from '../../../core/validation/regular-expressions';
 import { Messages } from '../../../core/messages/Messages'
 import { ProgressBarI } from 'src/app/core/contracts/progress-bar';
+import { FormsAlertsService } from 'src/app/shared/utils/forms-alerts.service';
 
 @Component({
   selector: 'app-form-pet',
@@ -21,7 +22,7 @@ export class FormPetComponent implements OnInit, ProgressBarI {
 
   savePet() {
     console.log('saving...')
-    if(this.validPet()) {
+    if(this.isValidPet()) {
       this.showProgressBar();
       this.petService.savePet(this.pet)
       .subscribe(data => {
@@ -38,40 +39,29 @@ export class FormPetComponent implements OnInit, ProgressBarI {
     }
   }
 
-  private validPet(): Boolean {
+  private isValidPet(): Boolean {
     if(!RegularExpressions.LETTERS_NUMBERS_SCRIPT_MIN1.test(this.pet.id)) {
-      this.showAlert('id');
+      FormsAlertsService.showAlert('id');
       return false;
-    }else this.hideAlert('id');
+    }else FormsAlertsService.hideAlert('id');
 
     if(!Boolean(this.pet.name)){
-      this.showAlert('name');
+      FormsAlertsService.showAlert('name');
       return false;
-    }else this.hideAlert('name');
+    }else FormsAlertsService.hideAlert('name');
 
     if(this.pet.colour.length <= 2){
-      this.showAlert('colour');
+      FormsAlertsService.showAlert('colour');
       return false;
-    }else this.hideAlert('colour');
+    }else FormsAlertsService.hideAlert('colour');
 
     if(this.pet.age <= 0){
-      this.showAlert('age');
+      FormsAlertsService.showAlert('age');
       return false;
-    }else this.hideAlert('age');
+    }else FormsAlertsService.hideAlert('age');
 
     return true;
   }
-
-  private showAlert(field: string) {
-    document.getElementById(field + '-alert')?.classList.remove('hide');
-    document.getElementById(field)?.classList.add('is-invalid');
-  }
-
-  private hideAlert(field: String) {
-    document.getElementById(field + '-alert')?.classList.add('hide');
-    document.getElementById(field.toString())?.classList.remove('is-invalid');
-  }
-
 
   showProgressBar(): void {
     document.getElementById('form')?.classList.add('progress-bar');

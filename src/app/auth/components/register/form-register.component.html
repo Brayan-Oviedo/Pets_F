@@ -1,0 +1,98 @@
+<body>
+
+    <img class="img-fluid h-100 w-100"
+        src="https://image.freepik.com/foto-gratis/muro-hormigon-gris-claro_53876-89532.jpg">
+
+    <div class="d-flex justify-content-center align-items-center my-3 min-vh-100">
+
+        <div class="card col-10 col-sm-7 col-md-5 col-lg-4 px-0">
+
+            <div class="card-header">
+
+                <div class="nav">
+                    <div class="nav-item m-auto font-weight-bolder">Registro</div>
+                </div>
+            </div>
+
+
+            <div class="card-body">
+
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" name="name" id="name" class="form-control bg-light" [(ngModel)]="newUser.name"
+                        [ngModelOptions]="{standalone: true}" required>
+
+                    <small class="font-italic text-danger hide" id="name-alert">
+                        Nombre no valido.
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Apellidos</label>
+                    <input type="text" name="lastName" id="lastName" class="form-control bg-light"
+                        [(ngModel)]="newUser.lastName" [ngModelOptions]="{standalone: true}" required>
+
+                    <small class="font-italic text-danger hide" id="lastName-alert">
+                        Apellido(s) no valido(s).
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label for="userName">Nombre de Usuario</label>
+                    <input type="text" name="userName" id="userName" class="form-control bg-light"
+                        [(ngModel)]="newUser.userName" [ngModelOptions]="{standalone: true}" required>
+
+                    <small class="font-italic text-danger hide" id="userName-alert">
+                        Nombre se usuario no valido.
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Edad</label>
+                    <input type="number" name="age" id="age" class="form-control bg-light" [(ngModel)]="newUser.age"
+                        [ngModelOptions]="{standalone: true}" required>
+
+                    <small class="font-italic text-danger hide" id="age-alert">
+                        Nombre se usuario no valido.
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" name="password" id="password" class="form-control bg-light"
+                        [(ngModel)]="newUser.password" [ngModelOptions]="{standalone: true}" required>
+
+                    <small class="font-italic text-danger hide" id="password-alert">
+                        Contraseña no valida.
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label for="checkPassword">Confirmar Contraseña</label>
+                    <input type="password" name="checkPassword" id="checkPassword" class="form-control bg-light"
+                        required>
+
+                    <small class="font-italic text-danger hide" id="checkPassword-alert">
+                        Las contraseñas no coinciden.
+                    </small>
+                </div>
+
+                <div class="form-group mt-4">
+                    <button class="btn btn-lg btn-outline-dark font-weight-bold btn-block" type="submit" (click)="register()">
+                        <i class="fas fa-sign-in-alt"></i> Registrarme</button>
+                </div>
+
+
+                <div class="form-group mb-0 text-center">
+
+                    <small class="d-inline-block form-text text-center text-muted font-italic">¿Ya tienes una
+                        cuenta?</small>
+                    <a class="text-dark font-weight-bold text-decoration-none" routerLink="/auth/login">
+                        Iniciar Sesion.</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>

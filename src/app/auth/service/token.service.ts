@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Role } from '../constants/role';
+import { Role } from '../constatns/role';
 
 const TOKEN_KEY = "AuthToken";
 
@@ -55,10 +55,7 @@ export class TokenService {
   }
 
   isLogged(): boolean {
-    if(this.getToken()){
-      return true;
-    }
-    return false;
+    return Boolean(this.getToken());
   }
  
 }
