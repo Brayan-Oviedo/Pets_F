@@ -1,4 +1,4 @@
-const PATH_PROJECT = '/dist/Pets_F';
+const PATH_PROJECT = '/dist/pets-f';
 const express = require('express');
 const app = express();
 
