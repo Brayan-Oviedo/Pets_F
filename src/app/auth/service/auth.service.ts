@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { JwtDto } from 'src/app/auth/model/jwt-dto';
 import { LoginUser } from 'src/app/auth/model/login-user';
+import { environment } from 'src/environments/environment';
 import { NewUser } from '../model/new-user';
 
 @Injectable({
@@ -10,7 +11,7 @@ import { NewUser } from '../model/new-user';
 })
 export class AuthService {
 
-  private URL_BASE = 'http://localhost:8080/auth'
+  private URL_BASE = environment.URL_BASE + 'auth'
 
   constructor(private http: HttpClient) { }
 
