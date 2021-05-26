@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   NAME: "pets-f",
   VERSION: "1.0.0",
-  URL_BASE: 'http://localhost:8080'
+  URL_BASE: 'http://localhost:8080/'
 };
 
 /*
