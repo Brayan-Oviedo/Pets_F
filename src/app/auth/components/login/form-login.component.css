@@ -1,11 +1,16 @@
-html, body {
-    overflow: hidden;
-    position: relative;
-    height: 100vh;    
+* {
+    box-sizing: border-box;
 }
 
-img {
-    position: absolute;
+body {
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-image: url(https://image.freepik.com/foto-gratis/muro-hormigon-gris-claro_53876-89532.jpg);
+}
+
+.row {
+    min-height: 93vh;
 }
 
 .hide {
