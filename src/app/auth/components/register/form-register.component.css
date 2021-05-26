@@ -5,10 +5,6 @@ body {
     background-image: url(https://image.freepik.com/foto-gratis/muro-hormigon-gris-claro_53876-89532.jpg);
 }
 
-.row {
-    min-height: 93vh;
-}
-
 .hide {
     display: none;
 }
