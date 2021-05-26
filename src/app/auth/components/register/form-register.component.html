@@ -1,5 +1,5 @@
 <body>
-    
+
     <img class="img-fluid h-100 w-100"
         src="https://image.freepik.com/foto-gratis/muro-hormigon-gris-claro_53876-89532.jpg">
 
@@ -70,7 +70,7 @@
                 <div class="form-group">
                     <label for="checkPassword">Confirmar Contraseña</label>
                     <input type="password" name="checkPassword" id="checkPassword" class="form-control bg-light"
-                        required>
+                        [(ngModel)]="checkPassword" [ngModelOptions]="{standalone: true}" required>
 
                     <small class="font-italic text-danger hide" id="checkPassword-alert">
                         Las contraseñas no coinciden.
@@ -78,7 +78,8 @@
                 </div>
 
                 <div class="form-group mt-4">
-                    <button class="btn btn-lg btn-outline-dark font-weight-bold btn-block" type="submit" (click)="register()">
+                    <button class="btn btn-lg btn-outline-dark font-weight-bold btn-block" type="submit"
+                        (click)="register()">
                         <i class="fas fa-sign-in-alt"></i> Registrarme</button>
                 </div>
 
