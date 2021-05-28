@@ -32,10 +32,11 @@ export class FormLoginComponent implements OnInit {
         result => {
           Messages.throwMessageSuccess('', 'Logueado.');
           this.tokenService.setToken(result.token); 
-          this.router.navigate(['/'])
+          this.router.navigate(['/']);
         },
         fail => {
-          Messages.throwMessageError('', fail.exception.mssg);
+          console.log(fail);
+          Messages.throwMessageError('', fail.error.mssg);
         }
       );
     }
