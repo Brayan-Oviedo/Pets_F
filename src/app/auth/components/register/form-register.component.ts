@@ -32,7 +32,7 @@ export class FormRegisterComponent implements OnInit {
           this.router.navigate(['/auth/login']);
         }, 
         fail => {
-          Messages.throwMessageError('', fail.error.exception.mssg);
+          Messages.throwMessageError('', fail.exception.mssg);
         }
       );
     }

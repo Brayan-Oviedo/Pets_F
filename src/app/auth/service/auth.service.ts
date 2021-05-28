@@ -22,15 +22,15 @@ export class AuthService {
     })
   };
 
-  login(loginUser: LoginUser): Observable<Result> {
+  login(loginUser: LoginUser): Observable<any> {
     return this.http.post<Result>(this.URL_BASE + '/login', loginUser, this.httpOptions);
   }
 
-  refrestToken(jwtDto: JwtDto): Observable<Result> {
+  refrestToken(jwtDto: JwtDto): Observable<any> {
     return this.http.post<JwtDto>(this.URL_BASE + '/refreshtoken', jwtDto, this.httpOptions);
   }
 
-  register(newUser: NewUser): Observable<Result> {
+  register(newUser: NewUser): Observable<any> {
     return this.http.post<any>(this.URL_BASE + "/register", newUser, this.httpOptions);
   }
 }

@@ -31,10 +31,11 @@ export class FormLoginComponent implements OnInit {
       this.authService.login(this.loginUser).subscribe(
         result => {
           Messages.throwMessageSuccess('', 'Logueado.');
-          this.tokenService.setToken(result.data.token); 
+          this.tokenService.setToken(result.token); 
           this.router.navigate(['/'])
-        },fail => {
-          Messages.throwMessageError('', fail.error.exception.mssg);
+        },
+        fail => {
+          Messages.throwMessageError('', fail.exception.mssg);
         }
       );
     }
