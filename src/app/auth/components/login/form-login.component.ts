@@ -29,13 +29,12 @@ export class FormLoginComponent implements OnInit {
   login() {
     if(this.isValidUser()) {
       this.authService.login(this.loginUser).subscribe(
-        data => {
-          Messages.throwMessageSuccess('', 'Logueado.')
-          this.tokenService.setToken(data.token); 
+        result => {
+          Messages.throwMessageSuccess('', 'Logueado.');
+          this.tokenService.setToken(result.data.token); 
           this.router.navigate(['/'])
-        },error => {
-          console.log(error.error);
-          Messages.throwMessageError(error.error.message, 'No se logro loguear.');
+        },fail => {
+          Messages.throwMessageError('', fail.error.exception.mssg);
         }
       );
     }

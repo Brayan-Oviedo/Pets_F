@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { JwtDto } from 'src/app/auth/model/jwt-dto';
 import { LoginUser } from 'src/app/auth/model/login-user';
+import { Result } from 'src/app/core/model/result';
 import { environment } from 'src/environments/environment';
 import { NewUser } from '../model/new-user';
 
@@ -21,15 +22,15 @@ export class AuthService {
     })
   };
 
-  login(loginUser: LoginUser): Observable<JwtDto> {
-    return this.http.post<JwtDto>(this.URL_BASE + '/login', loginUser, this.httpOptions);
+  login(loginUser: LoginUser): Observable<Result> {
+    return this.http.post<Result>(this.URL_BASE + '/login', loginUser, this.httpOptions);
   }
 
-  refrestToken(jwtDto: JwtDto): Observable<JwtDto> {
+  refrestToken(jwtDto: JwtDto): Observable<Result> {
     return this.http.post<JwtDto>(this.URL_BASE + '/refreshtoken', jwtDto, this.httpOptions);
   }
 
-  register(newUser: NewUser): Observable<any> {
+  register(newUser: NewUser): Observable<Result> {
     return this.http.post<any>(this.URL_BASE + "/register", newUser, this.httpOptions);
   }
 }

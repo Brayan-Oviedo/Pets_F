@@ -28,11 +28,11 @@ export class FormRegisterComponent implements OnInit {
     if(this.isValidUser()) {
       this.authService.register(this.newUser).subscribe(
         data => {
-          Messages.throwMessageSuccess('', '');
+          Messages.throwMessageSuccess('', 'Registrado');
           this.router.navigate(['/auth/login']);
         }, 
-        error => {
-          Messages.throwMessageError('', error.error.message);
+        fail => {
+          Messages.throwMessageError('', fail.error.exception.mssg);
         }
       );
     }
