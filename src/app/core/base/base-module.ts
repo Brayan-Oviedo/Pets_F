@@ -1,3 +1,4 @@
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { interceptorProvider } from '../../auth/interceptor/interceptor.service'
@@ -7,7 +8,8 @@ import { interceptorProvider } from '../../auth/interceptor/interceptor.service'
     HttpClientModule
   ],
   providers: [
-   interceptorProvider
+   interceptorProvider,
+   {provide: LocationStrategy, useClass: HashLocationStrategy}
   ]
 })
 export class BaseModule {}
